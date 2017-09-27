@@ -330,7 +330,7 @@ func main() {
 }
 
 func createConn(config *Config, block kcp.BlockCrypt) (ss *kcp.UDPSession, err error) {
-	kcpconn, err := kcp.DialWithOptions(config.RemoteAddr, block, config.DataShard, config.ParityShard, config.Conn)
+	kcpconn, err := kcp.DialWithOptions(config.RemoteAddr, block, config.DataShard, config.ParityShard)
 	if err != nil {
 		return nil, errors.Wrap(err, "createConn()")
 	}
